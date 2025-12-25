@@ -3,7 +3,7 @@
 This project explores recent Steam game releases (2021–2025) using Python and basic visualization tooling.  
 The focus is on price distributions, temporal release patterns, genre structure, and play modes.
 
-The results are summarized in a static, JS‑free GitHub Pages site:
+The results are summarized in a GitHub Pages site:
 
 👉 **EDA Overview:** https://nimtandox.github.io/DSCP-steam-market-analyzer/pages/
 
