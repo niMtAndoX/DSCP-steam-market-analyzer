@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>The Shape of Modern Games – Steam EDA 2021–2025</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A static overview of an exploratory data analysis of Steam game releases between 2021 and 2025." />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <!-- Hero / Header -->
+    <header class="site-header">
+        <div class="shell">
+            <div class="hero">
+                <div class="hero-text">
+                    <p class="eyebrow">Steam Market Analyzer · 2021–2025</p>
+                    <h1>The Shape of Modern Games</h1>
+                    <p class="subtitle">An Exploratory Data Analysis of Steam Releases (2021–2025)</p>
+                    <p class="intro">
+                        This overview summarizes an exploratory data analysis of thousands of recent Steam releases,
+                        focusing on pricing, release timing, genres, and play modes. Steam is a uniquely rich platform:
+                        it combines AAA blockbusters with a long tail of independent experiments, making it ideal for
+                        studying how modern PC games are produced, priced, and discovered.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="shell">
+            <!-- Pricing Overview -->
+            <section id="pricing" class="card-section">
+                <header class="section-header">
+                    <h2>Pricing Overview</h2>
+                    <p>
+                        Most games are priced under €10, with a dense cluster of low-cost and free-to-play titles.
+                        Average prices appear to peak around 2023 before softening slightly, but sampling and
+                        catalog changes make this trend approximate rather than definitive. Price signals on Steam
+                        must therefore be interpreted cautiously alongside genre, visibility, and discount behavior.
+                    </p>
+                </header>
+
+                <div class="card-grid">
+                    <article class="card">
+                        <h3>Distribution of Paid Game Prices</h3>
+                        <figure class="viz">
+                            <img src="img/price_distribution.png" alt="Histogram of paid Steam game prices binned into euro ranges." />
+                            <figcaption>
+                                Most paid releases fall below €10, with sharply declining counts in higher price bands.
+                                Outliers above €50 exist but represent a small fraction of the catalog.
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="card">
+                        <h3>Average Price per Year</h3>
+                        <figure class="viz">
+                            <img src="img/avg_price_per_year.png" alt="Bar chart showing the average price of paid Steam games per release year." />
+                            <figcaption>
+                                Average prices peak around 2023, then flatten or slightly decline. This might reflect
+                                increased competition from low-priced indie games rather than a structural drop in
+                                production costs or perceived value.
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Release Trends -->
+            <section id="release-trends" class="card-section">
+                <header class="section-header">
+                    <h2>Release Trends</h2>
+                    <p>
+                        Steam shows strong growth in annual release counts, consistent with low digital distribution
+                        barriers and accessible development tooling. Within each year, releases cluster around
+                        autumn months, when publishers target holiday demand and platform traffic is typically higher.
+                    </p>
+                </header>
+
+                <div class="card-grid">
+                    <article class="card">
+                        <h3>Games Published per Year</h3>
+                        <figure class="viz">
+                            <img src="img/games_published_per_year.png" alt="Bar chart of the number of Steam games published per year from 2021 to 2025." />
+                            <figcaption>
+                                The number of titles released each year increases over the 2021–2025 window, with
+                                especially strong growth in the later years as more small studios and solo developers
+                                reach the platform.
+                            </figcaption>
+                        </figure>
+                    </article>
+
+                    <article class="card">
+                        <h3>Seasonality in Monthly Releases</h3>
+                        <figure class="viz">
+                            <img src="img/games_published_per_month.png" alt="Bar chart showing total Steam releases aggregated by calendar month." />
+                            <figcaption>
+                                Releases are not evenly distributed across the year: autumn months (September–November)
+                                are clear peaks, while early-year months are quieter. This aligns with common release
+                                strategies around sales events and holiday spending.
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Play Modes -->
+            <section id="play-modes" class="card-section">
+                <header class="section-header">
+                    <h2>Play Modes: Single vs. Multiplayer</h2>
+                    <p>
+                        Single-player experiences dominate recent Steam releases, reflecting the lower coordination
+                        and infrastructure costs for small teams. Multiplayer support, however, grows steadily over
+                        time, particularly among competitive and co‑operative titles that depend on network effects.
+                    </p>
+                </header>
+
+                <article class="card single-card">
+                    <h3>Games Published per Year by Play Mode</h3>
+                    <figure class="viz">
+                        <img src="img/single_vs_multi_pa.png" alt="Grouped bar chart comparing yearly counts of single-player vs multiplayer-capable games." />
+                        <figcaption>
+                            Single-player support appears in the majority of titles for every year, but multiplayer
+                            features trend upward, suggesting a gradual shift toward social and live-service designs.
+                        </figcaption>
+                    </figure>
+                </article>
+            </section>
+
+            <!-- Genre Landscape -->
+            <section id="genres" class="card-section">
+                <header class="section-header">
+                    <h2>Genre Landscape</h2>
+                    <p>
+                        Genre tags reveal a dense core of highly connected categories—especially Indie, Action, and
+                        Adventure—that frequently co‑occur in the same titles. More specialized genres sit on the
+                        periphery of this landscape, forming smaller, more isolated clusters of niche experiences.
+                    </p>
+                </header>
+
+                <article class="card single-card">
+                    <h3>Genre Similarity Map</h3>
+                    <figure class="viz">
+                        <img src="img/genre_similarity_map.png" alt="MDS scatterplot of genres based on Jaccard similarity of co-occurrence, clustered with k-means." />
+                        <figcaption>
+                            Each bubble represents a genre, sized by frequency and colored by similarity cluster.
+                            Central clusters mix Indie, Action, and Adventure with common hybrids (RPG, Simulation),
+                            while outer clusters capture narrower tastes such as specific sports or experimental tags.
+                        </figcaption>
+                    </figure>
+                </article>
+            </section>
+
+            <!-- Popular Games -->
+            <section id="popular-games" class="card-section">
+                <header class="section-header">
+                    <h2>Popular Games</h2>
+                    <p>
+                        Using community recommendations as a rough proxy for popularity, both high-budget franchises
+                        and lean indie productions can achieve strong player engagement. Recommendation counts capture
+                        visibility and enthusiasm but do not directly measure revenue or retention.
+                    </p>
+                </header>
+
+                <article class="card single-card">
+                    <h3>Top 10 Most Recommended Games</h3>
+                    <figure class="viz">
+                        <img src="img/top_10_recommended_games.png" alt="Horizontal bar chart of the 10 Steam games with the highest recommendation counts." />
+                        <figcaption>
+                            The top recommended titles include a mix of recognizable AAA releases and standout
+                            indie projects. This reinforces that discoverability and resonance with niche audiences
+                            can put smaller games alongside major studio productions.
+                        </figcaption>
+                    </figure>
+                </article>
+            </section>
+
+            <!-- Insights & Limitations -->
+            <section id="insights-limitations" class="card-section">
+                <header class="section-header">
+                    <h2>Insights &amp; Limitations</h2>
+                    <p>
+                        These findings summarize patterns in a recent slice of the Steam catalog and should be read
+                        as descriptive rather than predictive. Several structural limitations are worth noting:
+                    </p>
+                </header>
+
+                <article class="card insights-card">
+                    <h3>Key Caveats</h3>
+                    <ul>
+                        <li>
+                            <strong>Temporal scope:</strong> The dataset is restricted to releases from 2021–2025, so
+                            long‑term historical trends and pre‑2021 baselines are not visible.
+                        </li>
+                        <li>
+                            <strong>Signal vs. outcome:</strong> Recommendation counts are treated as a popularity proxy,
+                            but they do not directly represent units sold, revenue, or playtime.
+                        </li>
+                        <li>
+                            <strong>External influences:</strong> Macroeconomic factors, platform policy changes,
+                            marketing budgets, and major content updates can all shift outcomes independently of
+                            genre or price.
+                        </li>
+                        <li>
+                            <strong>Catalog bias:</strong> The analysis focuses on titles present in the curated dataset;
+                            unlisted, delisted, or region‑locked games are implicitly excluded.
+                        </li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell footer-content">
+            <p class="footer-meta">
+                Author: Your Name · Course: Data Science Project · 2025
+            </p>
+            <p class="footer-meta">
+                GitHub: <a href="#" aria-label="Placeholder link to project GitHub repository">project repository (placeholder)</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
