@@ -145,7 +145,6 @@ main {
         background 180ms ease-out;
 }
 
-/* Slight parallax-style hover to keep things subtle and modern */
 .card:hover,
 .insights-card:hover {
     transform: translateY(-4px);
@@ -164,7 +163,6 @@ main {
     margin: 0 0 0.75rem;
 }
 
-/* Single-column cards that should span the full row */
 .single-card {
     margin-top: 0.75rem;
 }
@@ -182,7 +180,6 @@ main {
     border: 1px solid rgba(148, 163, 184, 0.4);
     background-color: #020617;
     box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
-    /* Extra space below the image so its shadow does not sit directly under the caption text */
     margin-bottom: 1.9rem;
     transition:
         transform 180ms ease-out,
@@ -190,12 +187,10 @@ main {
         border-color 180ms ease-out;
 }
 
-/* Subtle zoom on hover to signal interactivity without being flashy */
 .card:hover .viz img,
 .single-card:hover .viz img {
     transform: scale(1.01);
     border-color: rgba(56, 189, 248, 0.7);
-    /* Keep hover shadow modest so it doesn't darken text below */
     box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
 }
 
@@ -219,7 +214,7 @@ main {
 .single-card:hover .viz figcaption,
 .single-card:focus-within .viz figcaption {
     opacity: 1;
-    max-height: 400px; /* plenty for a short paragraph */
+    max-height: 400px; 
     margin-top: 0.6rem;
 }
 
@@ -272,7 +267,6 @@ main {
     color: #e0f2fe;
 }
 
-/* Responsive tweaks */
 @media (min-width: 768px) {
     .site-header {
         padding-top: 4.2rem;
